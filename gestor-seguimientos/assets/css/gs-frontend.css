@@ -1,0 +1,165 @@
+/* Variables de diseño */
+:root {
+    --gs-color-texto: #1a1a24;
+    --gs-color-secundario: #6c757d;
+    --gs-color-primario: #040515; /* Botón oscuro */
+    --gs-color-error-borde: #ffb3b3;
+    --gs-color-error-fondo: #fff5f5;
+    --gs-color-exito-borde: #b3e6b3;
+    --gs-color-exito-fondo: #f5fff5;
+    --gs-color-verde: #00b33c;
+    --gs-radio-borde: 8px;
+    --gs-fuente: system-ui, -apple-system, sans-serif;
+}
+
+.gs-contenedor-principal {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: var(--gs-fuente);
+    color: var(--gs-color-texto);
+}
+
+.gs-cabecera {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gs-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gs-color-texto);
+}
+
+.gs-subtitulo {
+    font-size: 14px;
+    color: var(--gs-color-secundario);
+}
+
+/* Formulario */
+.gs-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gs-grupo-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: var(--gs-radio-borde);
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    height: 45px;
+}
+
+.gs-prefijo {
+    background: #f5f5f5;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--gs-color-secundario);
+    font-weight: 500;
+    font-size: 14px;
+    border-right: 1px solid #ddd;
+}
+
+#gs-input-codigo {
+    flex: 1;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: none;
+}
+
+.gs-btn-limpiar {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+.gs-btn-consultar {
+    background-color: var(--gs-color-primario);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: var(--gs-radio-borde);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gs-btn-consultar:hover { opacity: 0.9; }
+.gs-btn-consultar:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Resultados */
+.gs-resultado-oculto { display: none; }
+
+.gs-tarjeta-error {
+    border: 1px solid var(--gs-color-error-borde);
+    background-color: var(--gs-color-error-fondo);
+    border-radius: var(--gs-radio-borde);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gs-error-etiqueta { font-size: 12px; color: var(--gs-color-secundario); }
+.gs-error-mensaje { font-weight: 600; margin: 5px 0 0 0; }
+.gs-icono-error { color: #ff4d4d; font-weight: bold; border: 1px solid #ff4d4d; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+
+.gs-tarjeta-codigo {
+    border: 1px solid #eee;
+    border-radius: var(--gs-radio-borde);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.gs-codigo-etiqueta { font-size: 11px; color: var(--gs-color-secundario); font-weight: 600; letter-spacing: 0.5px; }
+.gs-codigo-valor { font-weight: 700; font-size: 18px; margin: 5px 0 0 0; }
+.gs-icono-caja { background: #e6f0ff; color: #005ce6; padding: 10px; border-radius: var(--gs-radio-borde); font-size: 18px; }
+
+.gs-tarjeta-estado {
+    border: 1px solid #eee;
+    border-radius: var(--gs-radio-borde);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.gs-estado-finalizado {
+    border-color: var(--gs-color-exito-borde);
+    background-color: var(--gs-color-exito-fondo);
+    justify-content: space-between;
+}
+
+.gs-punto-verde { width: 12px; height: 12px; background-color: var(--gs-color-verde); border-radius: 50%; }
+.gs-estado-etiqueta { font-size: 12px; font-weight: 600; color: var(--gs-color-texto); }
+.gs-estado-mensaje { font-size: 14px; color: var(--gs-color-secundario); margin: 2px 0 0 0; }
+.gs-icono-check { background: var(--gs-color-verde); color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+/* Detalle del Producto */
+.gs-detalle-articulo { border-top: 1px solid #eee; padding-top: 20px; }
+.gs-articulo-etiqueta { font-size: 12px; font-weight: 700; color: var(--gs-color-texto); }
+.gs-articulo-titulo { font-size: 16px; font-weight: 700; margin: 10px 0; line-height: 1.4; }
+.gs-articulo-descripcion { font-size: 13px; color: var(--gs-color-secundario); line-height: 1.6; }
+.gs-articulo-descripcion p { margin-top: 0; }
